@@ -1,0 +1,30 @@
+# Environments
+venv/
+env/
+.venv/
+*/__pycache__/
+*.pyc
+
+# IDE / OS specific
+.vscode/
+.idea/
+.DS_Store
+
+# Database File (IMPORTANT!)
+# You usually DON'T want to commit your database file directly,
+# especially if it contains real data or gets large.
+# The deployed app often uses a separate database instance
+# or starts with an initial schema/empty file.
+# If you MUST include it for initial deployment (e.g., with synthetic data),
+# you can comment this line out *temporarily*, but it's not best practice.
+#Yang.db
+#*.db
+
+# Secrets / Sensitive Files (if any - use Streamlit Secrets instead)
+secrets.toml
+.env
+
+# Other temporary/build files
+dist/
+build/
+*.egg-info/
