@@ -106,7 +106,7 @@ def add_portco(portco_name, year_founded, industry_classification_str, establish
         if conn: conn.close()
 
 # --- Streamlit Page ---
-#st.set_page_config(layout="wide", page_title="Portfolio Companies")
+st.set_page_config(layout="wide", page_title="Portfolio Companies")
 
 # --- Render Functions ---
 def render_main_dashboard():

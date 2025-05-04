@@ -185,7 +185,7 @@ def format_percentage(value):
     except (ValueError, TypeError): return "Invalid Format"
 
 # --- Streamlit Page ---
-#st.set_page_config(layout="wide", page_title="Fund Returns")
+st.set_page_config(layout="wide", page_title="Fund Returns")
 
 def render_returns_dashboard():
     """Displays the Fund Returns dashboard."""

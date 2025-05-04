@@ -19,6 +19,7 @@ INDUSTRY_LIST = ['Energy','Materials', 'Industrials',
                  'Consumer Discretionary', 'Consumer Staples', 'Health Care',
                  'Financials', 'Information Technology', 'Communication Services',
                  'Utilities', 'Real Estate']
+# --- UPDATED COUNTRY LIST ---
 COUNTRY_LIST = ['China','Germany','India','Singapore','United Kingdom', 'United States']
 STATUS_OPTIONS = ['Active', 'Inactive']
 
@@ -99,7 +100,6 @@ def update_portco(portco_id, portco_name, year_founded, industry_classification_
         if conn: conn.close()
 
 def delete_portco(portco_id):
-    """Deletes a portfolio company by its ID (Cascade should delete investments and KPIs)."""
     conn = db_connect()
     c = conn.cursor()
     portco_name = f"ID {portco_id}"
@@ -221,6 +221,7 @@ def delete_investment(investment_id):
     except sqlite3.Error as e: st.error(f"DB error deleting investment: {e}"); return False
     finally:
         if conn: conn.close()
+
 
 # --- KPI DB Functions ---
 def create_kpi_table():
@@ -630,7 +631,7 @@ def render_homepage_dashboard():
 create_portco_table()
 create_investment_table()
 create_kpi_table()
-create_event_table()
+create_event_table() # Add this call
 
 # --- Routing based on Query Params ---
 query_params = st.query_params.to_dict()
@@ -640,15 +641,15 @@ param_id = query_params.get("id")
 if param_page == "company" and param_id:
     try:
         company_id_int = int(param_id)
-        render_company_page(company_id_int)
+        render_company_page(company_id_int) # Render the detail page if ID is valid
     except (ValueError, TypeError):
         st.title("Yang Portfolio Management")
         st.error("Invalid Company ID provided in the URL.")
-        render_homepage_dashboard()
+        render_homepage_dashboard() # Show homepage as fallback
     except Exception as e:
         st.title("Yang Portfolio Management")
         st.error(f"An error occurred displaying the company page: {e}")
-        render_homepage_dashboard()
+        render_homepage_dashboard() # Show homepage as fallback
 else:
-    # --- Render the Homepage Dashboard by default ---
+    # --- Render the NEW Homepage Dashboard by default ---
     render_homepage_dashboard()

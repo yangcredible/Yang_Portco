@@ -156,7 +156,7 @@ def format_currency(value):
 
 #--------------------Streamlit App--------------------
 
-#st.set_page_config(layout="wide", page_title="Investments") # Specific title
+st.set_page_config(layout="wide", page_title="Investments") # Specific title
 
 # --- Initialize tables ---
 ensure_tables_exist()

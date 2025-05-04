@@ -131,7 +131,7 @@ def format_currency(value):
 
 
 # --- Streamlit Page ---
-#st.set_page_config(layout="wide", page_title="KPIs")
+st.set_page_config(layout="wide", page_title="KPIs")
 
 def render_kpi_dashboard():
     """Displays the main KPI dashboard: KPI List (Markdown Table) and Add Form."""

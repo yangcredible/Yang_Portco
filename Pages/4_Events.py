@@ -131,7 +131,7 @@ def format_currency(value, currency_symbol='$'):
     except (ValueError, TypeError): return "Invalid Format"
 
 # --- Streamlit Page ---
-#st.set_page_config(layout="wide", page_title="Financial Events")
+st.set_page_config(layout="wide", page_title="Financial Events")
 
 def render_events_dashboard():
     """Displays the main Events dashboard: Event List and Add Forms."""
