@@ -28,3 +28,6 @@ secrets.toml
 dist/
 build/
 *.egg-info/
+
+#To do
+To_do.txt

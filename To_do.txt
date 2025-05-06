@@ -1,1 +1,18 @@
+# Create Investment
+
 1. Add Icons to Industry Classification
+2. Improve visibility of buttons
+3. Add sub-sector
+4. Add other "text"
+5. Add reset button
+6. Add equity owned
+
+# Overall
+
+1. Add a dilution calculator?
+2. Create an events form (Reporting / New Fundraising Round / Exit)
+3. Add KPI table
+4. Add log-in credentials
+5. Handle individual company page on another page?
+
+# Investments
